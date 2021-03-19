@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="11"/>
+    <BuildModes Active="Default"/>
+    <Units Count="2">
+      <Unit0>
+        <Filename Value="Clicker.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="1"/>
+        <CursorPos X="65" Y="14"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="uclicker.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="FClicker"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UClicker"/>
+        <IsVisibleTab Value="True"/>
+        <CursorPos X="48" Y="19"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit1>
+    </Units>
+    <JumpHistory Count="3" HistoryIndex="2">
+      <Position1>
+        <Filename Value="uclicker.pas"/>
+        <Caret Line="12" Column="25"/>
+      </Position1>
+      <Position2>
+        <Filename Value="uclicker.pas"/>
+        <Caret Line="9" Column="55"/>
+      </Position2>
+      <Position3>
+        <Filename Value="uclicker.pas"/>
+        <Caret Line="10" Column="55"/>
+      </Position3>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0" ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

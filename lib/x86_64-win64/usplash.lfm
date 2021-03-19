@@ -1,0 +1,8 @@
+object FSplash: TFSplash
+  Left = 702
+  Height = 240
+  Top = 283
+  Width = 320
+  Caption = 'FSplash'
+  LCLVersion = '2.0.12.0'
+end

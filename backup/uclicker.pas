@@ -6,23 +6,27 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ActnList, Menus,
-  ExtCtrls;
+  ExtCtrls, uabout;
 
 type
 
   { TFClicker }
 
   TFClicker = class(TForm)
+    About: TAction;
+    MenuItem3: TMenuItem;
     StopApp: TAction;
     DisplayForm: TAction;
     ActionList: TActionList;
     MenuItem1: TMenuItem;
     MenuItem2: TMenuItem;
-    MenuItem3: TMenuItem;
     MenuItem4: TMenuItem;
     PopupMenu1: TPopupMenu;
     TrayIcon: TTrayIcon;
+    procedure AboutExecute(Sender: TObject);
     procedure DisplayFormExecute(Sender: TObject);
+    procedure FClickerSizeConstraintsChange(Sender: TObject);
+    procedure FormResize(Sender: TObject);
     procedure MenuItem1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure FormWindowStateChange(Sender: TObject);
@@ -80,6 +84,21 @@ procedure TFClicker.DisplayFormExecute(Sender: TObject);
 begin
   FClicker.Show;
   FClicker.WindowState:=wsNormal;
+end;
+
+procedure TFClicker.FClickerSizeConstraintsChange(Sender: TObject);
+begin
+
+end;
+
+procedure TFClicker.FormResize(Sender: TObject);
+begin
+
+end;
+
+procedure TFClicker.AboutExecute(Sender: TObject);
+begin
+  FAbout.Show;
 end;
 
 end.

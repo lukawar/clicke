@@ -1,0 +1,8 @@
+object FAbout: TFAbout
+  Left = 498
+  Height = 260
+  Top = 258
+  Width = 495
+  Caption = 'Clicker'
+  LCLVersion = '2.0.12.0'
+end

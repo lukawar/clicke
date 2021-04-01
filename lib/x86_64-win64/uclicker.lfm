@@ -4,6 +4,7 @@ object FClicker: TFClicker
   Top = 303
   Width = 369
   Caption = 'Clicker'
+  Constraints.OnChange = FClickerSizeConstraintsChange
   Icon.Data = {
     3E42000000000100010040400000010020002842000016000000280000004000
     0000800000000100200000000000004000006400000064000000000000000000
@@ -537,17 +538,26 @@ object FClicker: TFClicker
     0000000000000000000000000000000000000000000000000000000000000000
     0000
   }
+  OnResize = FormResize
+  OnShow = FormShow
+  OnWindowStateChange = FormWindowStateChange
+  Position = poScreenCenter
   LCLVersion = '2.0.12.0'
+  Visible = True
   object ActionList: TActionList
     Left = 32
     Top = 24
     object DisplayForm: TAction
-      Caption = 'DisplayForm'
+      Caption = 'Ustawienia'
       OnExecute = DisplayFormExecute
     end
     object StopApp: TAction
-      Caption = 'StopApp'
+      Caption = 'Zamknij'
       OnExecute = StopAppExecute
+    end
+    object About: TAction
+      Caption = 'O programie'
+      OnExecute = AboutExecute
     end
   end
   object PopupMenu1: TPopupMenu
@@ -558,11 +568,13 @@ object FClicker: TFClicker
       OnClick = MenuItem1Click
     end
     object MenuItem2: TMenuItem
-      Caption = 'O programie'
+      Action = About
     end
     object MenuItem3: TMenuItem
+      Caption = '-'
     end
     object MenuItem4: TMenuItem
+      Action = StopApp
       Caption = 'Zakończ'
     end
   end

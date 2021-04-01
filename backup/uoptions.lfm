@@ -1,0 +1,134 @@
+object FOptions: TFOptions
+  Left = 425
+  Height = 424
+  Top = 193
+  Width = 708
+  BorderStyle = bsDialog
+  Caption = 'Ustawienia'
+  ClientHeight = 424
+  ClientWidth = 708
+  LCLVersion = '2.0.12.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 42
+    Top = 382
+    Width = 708
+    Align = alBottom
+    ClientHeight = 42
+    ClientWidth = 708
+    TabOrder = 0
+    object Button1: TButton
+      Left = 621
+      Height = 25
+      Top = 8
+      Width = 75
+      Caption = 'Zamknij'
+      OnClick = Button1Click
+      TabOrder = 0
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 382
+    Top = 0
+    Width = 708
+    Align = alClient
+    ClientHeight = 382
+    ClientWidth = 708
+    TabOrder = 1
+    object DBGrid1: TDBGrid
+      Left = 8
+      Height = 160
+      Top = 0
+      Width = 688
+      Color = clWindow
+      Columns = <      
+        item
+          Title.Caption = 'Id'
+          FieldName = 'Column1'
+        end      
+        item
+          Title.Caption = 'Nazwa'
+          FieldName = 'Column2'
+        end      
+        item
+          Title.Caption = 'Column3'
+          FieldName = 'Column3'
+        end      
+        item
+          Title.Caption = 'Column4'
+          FieldName = 'Column4'
+        end      
+        item
+          Title.Caption = 'Column5'
+          FieldName = 'Column5'
+        end>
+      DataSource = DataSource1
+      Scrollbars = ssAutoBoth
+      TabOrder = 0
+    end
+    object DBEdit1: TDBEdit
+      Left = 18
+      Height = 23
+      Top = 185
+      Width = 80
+      DataField = 'Column1'
+      DataSource = DataSource1
+      CharCase = ecNormal
+      MaxLength = 255
+      TabOrder = 1
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = CSVDataset1
+    Left = 56
+    Top = 248
+  end
+  object CSVDataset1: TCSVDataset
+    FileName = 'D:\Projects\pascal\clicker\clicker.csv'
+    IndexName = 'DEFAULT_ORDER'
+    MaxIndexesCount = 4
+    FieldDefs = <    
+      item
+        Name = 'Column1'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = 'Column2'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = 'Column3'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = 'Column4'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end    
+      item
+        Name = 'Column5'
+        DataType = ftString
+        Precision = -1
+        Size = 255
+      end>
+    Active = True
+    AutoCalcFields = False
+    CSVOptions.FirstLineAsFieldNames = False
+    CSVOptions.DefaultFieldLength = 255
+    CSVOptions.Delimiter = ','
+    CSVOptions.QuoteChar = '"'
+    CSVOptions.LineEnding = #13#10
+    CSVOptions.IgnoreOuterWhitespace = False
+    CSVOptions.QuoteOuterWhitespace = True
+    Left = 152
+    Top = 264
+  end
+end

@@ -561,8 +561,8 @@ object FClicker: TFClicker
     end
   end
   object PopupMenu1: TPopupMenu
-    Left = 256
-    Top = 40
+    Left = 296
+    Top = 32
     object MenuItem1: TMenuItem
       Caption = 'Ustawienia'
       OnClick = MenuItem1Click
@@ -1113,6 +1113,7 @@ object FClicker: TFClicker
       0000000000000000000000000000000000000000000000000000000000000000
       0000
     }
+    Hint = 'Status'
     Visible = True
     OnClick = TrayIconClick
     Left = 192

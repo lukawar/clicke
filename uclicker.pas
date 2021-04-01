@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ActnList, Menus,
-  ExtCtrls, uabout;
+  ExtCtrls, uabout, uoptions;
 
 type
 
@@ -72,7 +72,7 @@ end;
 
 procedure TFClicker.TrayIconClick(Sender: TObject);
 begin
-
+  FOptions.Show;
 end;
 
 procedure TFClicker.MenuItem1Click(Sender: TObject);
@@ -82,8 +82,9 @@ end;
 
 procedure TFClicker.DisplayFormExecute(Sender: TObject);
 begin
-  FClicker.Show;
-  FClicker.WindowState:=wsNormal;
+  //FClicker.Show;
+  //FClicker.WindowState:=wsNormal;
+   FOptions.Show;
 end;
 
 procedure TFClicker.FClickerSizeConstraintsChange(Sender: TObject);

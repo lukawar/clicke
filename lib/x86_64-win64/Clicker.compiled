@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <Compiler Value="D:\Programy\lazarus\fpc\3.2.0\bin\x86_64-win64\fpc.exe" Date="1381340986"/>
-  <Params Value=" -MObjFPC -Scghi -O1 -g -gl -WG -l -vewnhibq -Fid:\Projects\pascal\clicker\lib\x86_64-win64 -Fud:\programy\lazarus\lcl\units\x86_64-win64\win32 -Fud:\programy\lazarus\lcl\units\x86_64-win64 -Fud:\programy\lazarus\components\lazutils\lib\x86_64-win64 -Fud:\programy\lazarus\packager\units\x86_64-win64 -Fud:\Projects\pascal\clicker\ -FUd:\Projects\pascal\clicker\lib\x86_64-win64\ -FEd:\Projects\pascal\clicker\ -od:\Projects\pascal\clicker\Clicker.exe -dLCL -dLCLwin32 Clicker.lpr"/>
+  <Params Value=" -MObjFPC -Scghi -O1 -g -gl -WG -l -vewnhibq -Fid:\Projects\pascal\clicker\lib\x86_64-win64 -Fud:\programy\lazarus\components\tdbf\lib\x86_64-win64\win32 -Fud:\programy\lazarus\components\ideintf\units\x86_64-win64\win32 -Fud:\programy\lazarus\components\lazcontrols\lib\x86_64-win64\win32 -Fud:\programy\lazarus\lcl\units\x86_64-win64\win32 -Fud:\programy\lazarus\lcl\units\x86_64-win64 -Fud:\programy\lazarus\components\lazutils\lib\x86_64-win64 -Fud:\programy\lazarus\packager\units\x86_64-win64 -Fud:\Projects\pascal\clicker\ -FUd:\Projects\pascal\clicker\lib\x86_64-win64\ -FEd:\Projects\pascal\clicker\ -od:\Projects\pascal\clicker\Clicker.exe -dLCL -dLCLwin32 Clicker.lpr"/>
 </CONFIG>

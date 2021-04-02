@@ -1,7 +1,7 @@
 object FAbout: TFAbout
-  Left = 498
+  Left = 944
   Height = 260
-  Top = 258
+  Top = 248
   Width = 495
   BorderStyle = bsDialog
   Caption = 'Clicker'

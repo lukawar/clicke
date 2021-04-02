@@ -1,7 +1,7 @@
 object FOptions: TFOptions
-  Left = 425
+  Left = 948
   Height = 424
-  Top = 193
+  Top = 218
   Width = 708
   BorderStyle = bsDialog
   Caption = 'Ustawienia'
@@ -36,110 +36,149 @@ object FOptions: TFOptions
     ClientHeight = 382
     ClientWidth = 708
     TabOrder = 1
-    object DBGrid1: TDBGrid
-      Left = 8
-      Height = 160
-      Top = 0
-      Width = 688
-      Color = clWindow
-      Columns = <      
-        item
-          Title.Caption = 'Id'
-          FieldName = 'Column1'
-        end      
-        item
-          Title.Caption = 'Nazwa'
-          FieldName = 'Column2'
-        end      
-        item
-          Title.Caption = 'Column3'
-          FieldName = 'Column3'
-        end      
-        item
-          Title.Caption = 'Column4'
-          FieldName = 'Column4'
-        end      
-        item
-          Title.Caption = 'Column5'
-          FieldName = 'Column5'
-        end>
-      DataSource = DataSource1
-      Scrollbars = ssAutoBoth
+    object GroupBox1: TGroupBox
+      Left = 1
+      Height = 221
+      Top = 160
+      Width = 706
+      Align = alClient
+      Caption = 'Dane'
+      ClientHeight = 201
+      ClientWidth = 702
       TabOrder = 0
+      object DBEdit1: TDBEdit
+        Left = 8
+        Height = 23
+        Top = 24
+        Width = 200
+        DataField = 'Column2'
+        DataSource = FClicker.DS
+        CharCase = ecNormal
+        MaxLength = 255
+        TabOrder = 0
+      end
+      object DBEdit2: TDBEdit
+        Left = 216
+        Height = 23
+        Top = 24
+        Width = 80
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 1
+      end
+      object DBEdit3: TDBEdit
+        Left = 307
+        Height = 23
+        Top = 24
+        Width = 80
+        CharCase = ecNormal
+        MaxLength = 0
+        TabOrder = 2
+      end
+      object DBDateTimePicker1: TDBDateTimePicker
+        Left = 393
+        Height = 23
+        Top = 24
+        Width = 65
+        ReadOnly = False
+        CenturyFrom = 1941
+        MaxDate = 2958465
+        MinDate = -53780
+        TabOrder = 3
+        DateSeparator = '-'
+        TrailingSeparator = False
+        TextForNullDate = 'NULL'
+        LeadingZeros = True
+        Kind = dtkTime
+        TimeSeparator = ':'
+        TimeFormat = tf24
+        TimeDisplay = tdHMS
+        DateMode = dmComboBox
+        UseDefaultSeparators = False
+        HideDateTimeParts = []
+        MonthNames = 'Long'
+      end
+      object Label1: TLabel
+        Left = 8
+        Height = 15
+        Top = 5
+        Width = 35
+        Caption = 'Nazwa'
+        ParentColor = False
+      end
+      object Label2: TLabel
+        Left = 217
+        Height = 15
+        Top = 5
+        Width = 29
+        Caption = 'pos X'
+        ParentColor = False
+      end
+      object Label3: TLabel
+        Left = 308
+        Height = 15
+        Top = 5
+        Width = 29
+        Caption = 'pos Y'
+        ParentColor = False
+      end
+      object Label4: TLabel
+        Left = 393
+        Height = 15
+        Top = 5
+        Width = 43
+        Caption = 'Godzina'
+        ParentColor = False
+      end
     end
-    object DBEdit1: TDBEdit
-      Left = 18
-      Height = 23
-      Top = 185
-      Width = 80
-      DataField = 'Column1'
-      DataSource = DataSource1
-      CharCase = ecNormal
-      MaxLength = 255
+    object GroupBox2: TGroupBox
+      Left = 1
+      Height = 159
+      Top = 1
+      Width = 706
+      Align = alTop
+      Caption = 'Lista'
+      ClientHeight = 139
+      ClientWidth = 702
       TabOrder = 1
+      object DBGrid1: TDBGrid
+        Left = 0
+        Height = 139
+        Top = 0
+        Width = 702
+        Align = alClient
+        Color = clWindow
+        Columns = <        
+          item
+            Title.Caption = 'Id'
+            Width = 50
+            FieldName = 'Column1'
+          end        
+          item
+            Title.Caption = 'Nazwa'
+            Width = 200
+            FieldName = 'Column2'
+          end        
+          item
+            Title.Caption = 'pos X'
+            Width = 50
+            FieldName = 'Column3'
+          end        
+          item
+            Title.Caption = 'pos Y'
+            Width = 50
+            FieldName = 'Column4'
+          end        
+          item
+            Title.Caption = 'godzina'
+            Width = 100
+            FieldName = 'Column5'
+          end>
+        DataSource = FClicker.DS
+        Flat = True
+        Options = [dgTitles, dgIndicator, dgColumnResize, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgDisableDelete, dgDisableInsert]
+        TabOrder = 0
+      end
     end
-    object DBEdit2: TDBEdit
-      Left = 112
-      Height = 23
-      Top = 185
-      Width = 80
-      DataField = 'Column2'
-      DataSource = DataSource1
-      CharCase = ecNormal
-      MaxLength = 255
-      TabOrder = 2
-    end
-  end
-  object DataSource1: TDataSource
-    DataSet = CSVDataset1
-    Left = 56
-    Top = 248
-  end
-  object CSVDataset1: TCSVDataset
-    FileName = 'D:\Projects\pascal\clicker\clicker.csv'
-    IndexName = 'DEFAULT_ORDER'
-    MaxIndexesCount = 4
-    FieldDefs = <    
-      item
-        Name = 'Column1'
-        DataType = ftString
-        Precision = -1
-        Size = 255
-      end    
-      item
-        Name = 'Column2'
-        DataType = ftString
-        Precision = -1
-        Size = 255
-      end    
-      item
-        Name = 'Column3'
-        DataType = ftString
-        Precision = -1
-        Size = 255
-      end    
-      item
-        Name = 'Column4'
-        DataType = ftString
-        Precision = -1
-        Size = 255
-      end    
-      item
-        Name = 'Column5'
-        DataType = ftString
-        Precision = -1
-        Size = 255
-      end>
-    Active = True
-    AutoCalcFields = False
-    CSVOptions.FirstLineAsFieldNames = False
-    CSVOptions.DefaultFieldLength = 255
-    CSVOptions.Delimiter = ','
-    CSVOptions.QuoteChar = '"'
-    CSVOptions.LineEnding = #13#10
-    CSVOptions.IgnoreOuterWhitespace = False
-    CSVOptions.QuoteOuterWhitespace = True
-    Left = 152
-    Top = 264
   end
 end

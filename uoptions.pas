@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, DB, csvdataset, dbf, Forms, Controls, Graphics, Dialogs,
-  ExtCtrls, DBGrids, StdCtrls, DBCtrls;
+  ExtCtrls, DBGrids, StdCtrls, DBCtrls, DBDateTimePicker;
 
 type
 
@@ -14,11 +14,17 @@ type
 
   TFOptions = class(TForm)
     Button1: TButton;
-    CSVDataset1: TCSVDataset;
-    DataSource1: TDataSource;
+    DBDateTimePicker1: TDBDateTimePicker;
     DBEdit1: TDBEdit;
     DBEdit2: TDBEdit;
+    DBEdit3: TDBEdit;
     DBGrid1: TDBGrid;
+    GroupBox1: TGroupBox;
+    GroupBox2: TGroupBox;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
     Panel1: TPanel;
     Panel2: TPanel;
     procedure Button1Click(Sender: TObject);

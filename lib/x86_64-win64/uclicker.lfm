@@ -564,7 +564,7 @@ object FClicker: TFClicker
     Left = 296
     Top = 16
     object MenuItem1: TMenuItem
-      Caption = 'Ustawienia'
+      Action = DisplayForm
       OnClick = MenuItem1Click
     end
     object MenuItem2: TMenuItem

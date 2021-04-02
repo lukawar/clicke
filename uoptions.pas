@@ -6,11 +6,18 @@ interface
 
 uses
   Classes, SysUtils, dbf, Forms, Controls, Graphics, Dialogs,
-  ExtCtrls, DBGrids, StdCtrls, DBCtrls;
+  ExtCtrls, DBGrids, StdCtrls, DBCtrls, Windows, Messages, Variants;
 
 type
 
   { TFOptions }
+  MouseLLHookStruct = record
+    pt          : TPoint;
+    mouseData   : cardinal;
+    flags       : cardinal;
+    time        : cardinal;
+    dwExtraInfo : cardinal;
+  end;
 
   TFOptions = class(TForm)
     Button1: TButton;
@@ -19,8 +26,8 @@ type
     Button4: TButton;
     Button5: TButton;
     DBEdit1: TDBEdit;
-    DBEdit2: TDBEdit;
-    DBEdit3: TDBEdit;
+    DBposx: TDBEdit;
+    DBPosy: TDBEdit;
     DBEdit4: TDBEdit;
     DBGrid1: TDBGrid;
     GroupBox1: TGroupBox;
@@ -29,6 +36,7 @@ type
     Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
+    Label5: TLabel;
     Panel1: TPanel;
     Panel2: TPanel;
     ToggleBox1: TToggleBox;
@@ -37,14 +45,18 @@ type
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
+    procedure ToggleBox1Change(Sender: TObject);
   private
 
   public
 
   end;
 
+  function LowLevelMouseHookProc(nCode: integer; wParam: WPARAM; lParam : LPARAM): LRESULT; stdcall;
+
 var
   FOptions: TFOptions;
+  mHook : cardinal;
 
 implementation
   uses UClicker;
@@ -76,6 +88,34 @@ end;
 procedure TFOptions.Button5Click(Sender: TObject);
 begin
   FClicker.Dbf.Delete;
+end;
+
+procedure TFOptions.ToggleBox1Change(Sender: TObject);
+const
+ WH_MOUSE_LL = 14;
+begin
+  if(ToggleBox1.Checked) then begin
+    Screen.Cursor := crHandPoint;
+    mHook := SetWindowsHookEx(WH_MOUSE_LL, @LowLevelMouseHookProc, hInstance, 0);
+    ToggleBox1.Checked:=false;
+  end;
+end;
+
+function LowLevelMouseHookProc(nCode: integer; wParam: WPARAM; lParam : LPARAM): LRESULT; stdcall;
+var
+  info : ^MouseLLHookStruct absolute lParam;
+begin
+  result := CallNextHookEx(mHook, nCode, wParam, lParam);
+  with info^ do begin
+    case wParam of
+      wm_lbuttondown : begin
+        FOptions.Label5.Caption := 'X: '+IntToStr(pt.x)+'  Y: '+ IntToStr(pt.y);
+        FOptions.DBPosx.Text:=IntToStr(pt.x);
+        FOptions.DBPosy.Text:=IntToStr(pt.y);
+
+      end;
+    end;
+  end;
 end;
 
 end.

@@ -57,7 +57,7 @@ object FOptions: TFOptions
         MaxLength = 50
         TabOrder = 0
       end
-      object DBEdit2: TDBEdit
+      object DBposx: TDBEdit
         Left = 216
         Height = 23
         Top = 24
@@ -69,7 +69,7 @@ object FOptions: TFOptions
         MaxLength = 0
         TabOrder = 1
       end
-      object DBEdit3: TDBEdit
+      object DBPosy: TDBEdit
         Left = 307
         Height = 23
         Top = 24
@@ -166,8 +166,17 @@ object FOptions: TFOptions
         Height = 42
         Top = 62
         Width = 161
-        Caption = 'ToggleBox1'
+        Caption = 'Wybierz kliknięcie'
+        OnChange = ToggleBox1Change
         TabOrder = 8
+      end
+      object Label5: TLabel
+        Left = 32
+        Height = 15
+        Top = 66
+        Width = 34
+        Caption = 'Label5'
+        ParentColor = False
       end
     end
     object GroupBox2: TGroupBox

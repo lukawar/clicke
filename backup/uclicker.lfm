@@ -1127,7 +1127,6 @@ object FClicker: TFClicker
   end
   object Dataset: TCSVDataset
     FileName = 'clicker.csv'
-    IndexName = 'DEFAULT_ORDER'
     MaxIndexesCount = 4
     FieldDefs = <    
       item

@@ -1,7 +1,7 @@
 object FOptions: TFOptions
-  Left = 948
+  Left = 897
   Height = 424
-  Top = 218
+  Top = 239
   Width = 708
   BorderStyle = bsDialog
   Caption = 'Ustawienia'
@@ -38,12 +38,12 @@ object FOptions: TFOptions
     TabOrder = 1
     object GroupBox1: TGroupBox
       Left = 1
-      Height = 221
-      Top = 160
+      Height = 133
+      Top = 248
       Width = 706
       Align = alClient
       Caption = 'Dane'
-      ClientHeight = 201
+      ClientHeight = 113
       ClientWidth = 702
       TabOrder = 0
       object DBEdit1: TDBEdit
@@ -51,10 +51,10 @@ object FOptions: TFOptions
         Height = 23
         Top = 24
         Width = 200
-        DataField = 'Column2'
-        DataSource = FClicker.DS
+        DataField = 'NAME'
+        DataSource = FClicker.DSDbf
         CharCase = ecNormal
-        MaxLength = 255
+        MaxLength = 50
         TabOrder = 0
       end
       object DBEdit2: TDBEdit
@@ -62,8 +62,10 @@ object FOptions: TFOptions
         Height = 23
         Top = 24
         Width = 80
+        DataField = 'Column3'
+        DataSource = FClicker.DS
         CharCase = ecNormal
-        MaxLength = 0
+        MaxLength = 255
         TabOrder = 1
       end
       object DBEdit3: TDBEdit
@@ -71,31 +73,38 @@ object FOptions: TFOptions
         Height = 23
         Top = 24
         Width = 80
+        DataField = 'Column4'
+        DataSource = FClicker.DS
         CharCase = ecNormal
-        MaxLength = 0
+        MaxLength = 255
         TabOrder = 2
       end
       object DBDateTimePicker1: TDBDateTimePicker
         Left = 393
         Height = 23
         Top = 24
-        Width = 65
+        Width = 59
+        DataField = 'Column5'
+        DataSource = FClicker.DS
         ReadOnly = False
         CenturyFrom = 1941
         MaxDate = 2958465
         MinDate = -53780
+        AutoSize = False
         TabOrder = 3
         DateSeparator = '-'
         TrailingSeparator = False
         TextForNullDate = 'NULL'
-        LeadingZeros = True
+        LeadingZeros = False
+        Anchors = []
         Kind = dtkTime
         TimeSeparator = ':'
         TimeFormat = tf24
-        TimeDisplay = tdHMS
+        TimeDisplay = tdHM
         DateMode = dmComboBox
         UseDefaultSeparators = False
-        HideDateTimeParts = []
+        AutoAdvance = False
+        HideDateTimeParts = [dtpHour, dtpMinute]
         MonthNames = 'Long'
       end
       object Label1: TLabel
@@ -130,20 +139,74 @@ object FOptions: TFOptions
         Caption = 'Godzina'
         ParentColor = False
       end
+      object Button2: TButton
+        Left = 464
+        Height = 25
+        Top = 22
+        Width = 75
+        Caption = 'Dodaj'
+        OnClick = Button2Click
+        TabOrder = 4
+      end
+      object Button3: TButton
+        Left = 544
+        Height = 25
+        Top = 22
+        Width = 75
+        Caption = 'Edytuj'
+        OnClick = Button3Click
+        TabOrder = 5
+      end
+      object Button4: TButton
+        Left = 464
+        Height = 25
+        Top = 56
+        Width = 75
+        Caption = 'Zapisz'
+        OnClick = Button4Click
+        TabOrder = 6
+      end
+      object DBNavigator1: TDBNavigator
+        Left = 8
+        Height = 25
+        Top = 56
+        Width = 241
+        BevelOuter = bvNone
+        ChildSizing.EnlargeHorizontal = crsScaleChilds
+        ChildSizing.EnlargeVertical = crsScaleChilds
+        ChildSizing.ShrinkHorizontal = crsScaleChilds
+        ChildSizing.ShrinkVertical = crsScaleChilds
+        ChildSizing.Layout = cclLeftToRightThenTopToBottom
+        ChildSizing.ControlsPerLine = 100
+        ClientHeight = 25
+        ClientWidth = 241
+        DataSource = FClicker.DS
+        Options = []
+        TabOrder = 7
+      end
+      object Button5: TButton
+        Left = 544
+        Height = 25
+        Top = 60
+        Width = 75
+        Caption = 'Usuń'
+        OnClick = Button5Click
+        TabOrder = 8
+      end
     end
     object GroupBox2: TGroupBox
       Left = 1
-      Height = 159
+      Height = 247
       Top = 1
       Width = 706
       Align = alTop
       Caption = 'Lista'
-      ClientHeight = 139
+      ClientHeight = 227
       ClientWidth = 702
       TabOrder = 1
       object DBGrid1: TDBGrid
         Left = 0
-        Height = 139
+        Height = 227
         Top = 0
         Width = 702
         Align = alClient
@@ -174,9 +237,9 @@ object FOptions: TFOptions
             Width = 100
             FieldName = 'Column5'
           end>
-        DataSource = FClicker.DS
+        DataSource = FClicker.DSDbf
         Flat = True
-        Options = [dgTitles, dgIndicator, dgColumnResize, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgDisableDelete, dgDisableInsert]
+        Options = [dgTitles, dgIndicator, dgColumnResize, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
         TabOrder = 0
       end
     end

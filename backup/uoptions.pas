@@ -5,7 +5,7 @@ unit uoptions;
 interface
 
 uses
-  Classes, SysUtils, DB, csvdataset, dbf, Forms, Controls, Graphics, Dialogs,
+  Classes, SysUtils, dbf, Forms, Controls, Graphics, Dialogs,
   ExtCtrls, DBGrids, StdCtrls, DBCtrls, DBDateTimePicker;
 
 type
@@ -14,11 +14,16 @@ type
 
   TFOptions = class(TForm)
     Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    Button4: TButton;
+    Button5: TButton;
     DBDateTimePicker1: TDBDateTimePicker;
     DBEdit1: TDBEdit;
     DBEdit2: TDBEdit;
     DBEdit3: TDBEdit;
     DBGrid1: TDBGrid;
+    DBNavigator1: TDBNavigator;
     GroupBox1: TGroupBox;
     GroupBox2: TGroupBox;
     Label1: TLabel;
@@ -28,6 +33,10 @@ type
     Panel1: TPanel;
     Panel2: TPanel;
     procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
   private
 
   public
@@ -38,6 +47,7 @@ var
   FOptions: TFOptions;
 
 implementation
+  uses UClicker;
 
 {$R *.lfm}
 
@@ -46,6 +56,26 @@ implementation
 procedure TFOptions.Button1Click(Sender: TObject);
 begin
   Close;
+end;
+
+procedure TFOptions.Button2Click(Sender: TObject);
+begin
+  FClicker.DS.DataSet.Insert;
+end;
+
+procedure TFOptions.Button3Click(Sender: TObject);
+begin
+  FClicker.DataSet.Edit;
+end;
+
+procedure TFOptions.Button4Click(Sender: TObject);
+begin
+  FClicker.Dataset.Post;
+end;
+
+procedure TFOptions.Button5Click(Sender: TObject);
+begin
+  FClicker.DataSet.Delete;
 end;
 
 end.

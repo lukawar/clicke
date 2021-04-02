@@ -1,6 +1,6 @@
 object FClicker: TFClicker
   Left = 587
-  Height = 117
+  Height = 137
   Top = 313
   Width = 369
   Caption = 'Clicker'
@@ -1127,7 +1127,6 @@ object FClicker: TFClicker
   end
   object Dataset: TCSVDataset
     FileName = 'clicker.csv'
-    IndexName = 'DEFAULT_ORDER'
     MaxIndexesCount = 4
     FieldDefs = <    
       item
@@ -1170,5 +1169,39 @@ object FClicker: TFClicker
     CSVOptions.QuoteOuterWhitespace = True
     Left = 81
     Top = 64
+  end
+  object Dbf: TDbf
+    FilePath = 'D:\Projects\pascal\clicker\'
+    IndexDefs = <>
+    TableName = 'clicker.dbf'
+    TableLevel = 4
+    Active = True
+    FilterOptions = []
+    Left = 296
+    Top = 72
+    object DbfID: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object DbfNAME: TStringField
+      FieldKind = fkData
+      FieldName = 'NAME'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
+    end
+  end
+  object DSDbf: TDataSource
+    DataSet = Dbf
+    Left = 248
+    Top = 72
   end
 end

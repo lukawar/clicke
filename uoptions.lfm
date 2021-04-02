@@ -62,10 +62,11 @@ object FOptions: TFOptions
         Height = 23
         Top = 24
         Width = 80
-        DataField = 'Column3'
-        DataSource = FClicker.DS
+        DataField = 'POSX'
+        DataSource = FClicker.DSDbf
+        Alignment = taRightJustify
         CharCase = ecNormal
-        MaxLength = 255
+        MaxLength = 0
         TabOrder = 1
       end
       object DBEdit3: TDBEdit
@@ -73,39 +74,12 @@ object FOptions: TFOptions
         Height = 23
         Top = 24
         Width = 80
-        DataField = 'Column4'
-        DataSource = FClicker.DS
+        DataField = 'POSY'
+        DataSource = FClicker.DSDbf
+        Alignment = taRightJustify
         CharCase = ecNormal
-        MaxLength = 255
+        MaxLength = 0
         TabOrder = 2
-      end
-      object DBDateTimePicker1: TDBDateTimePicker
-        Left = 393
-        Height = 23
-        Top = 24
-        Width = 59
-        DataField = 'Column5'
-        DataSource = FClicker.DS
-        ReadOnly = False
-        CenturyFrom = 1941
-        MaxDate = 2958465
-        MinDate = -53780
-        AutoSize = False
-        TabOrder = 3
-        DateSeparator = '-'
-        TrailingSeparator = False
-        TextForNullDate = 'NULL'
-        LeadingZeros = False
-        Anchors = []
-        Kind = dtkTime
-        TimeSeparator = ':'
-        TimeFormat = tf24
-        TimeDisplay = tdHM
-        DateMode = dmComboBox
-        UseDefaultSeparators = False
-        AutoAdvance = False
-        HideDateTimeParts = [dtpHour, dtpMinute]
-        MonthNames = 'Long'
       end
       object Label1: TLabel
         Left = 8
@@ -146,7 +120,7 @@ object FOptions: TFOptions
         Width = 75
         Caption = 'Dodaj'
         OnClick = Button2Click
-        TabOrder = 4
+        TabOrder = 3
       end
       object Button3: TButton
         Left = 544
@@ -155,7 +129,7 @@ object FOptions: TFOptions
         Width = 75
         Caption = 'Edytuj'
         OnClick = Button3Click
-        TabOrder = 5
+        TabOrder = 4
       end
       object Button4: TButton
         Left = 464
@@ -164,25 +138,7 @@ object FOptions: TFOptions
         Width = 75
         Caption = 'Zapisz'
         OnClick = Button4Click
-        TabOrder = 6
-      end
-      object DBNavigator1: TDBNavigator
-        Left = 8
-        Height = 25
-        Top = 56
-        Width = 241
-        BevelOuter = bvNone
-        ChildSizing.EnlargeHorizontal = crsScaleChilds
-        ChildSizing.EnlargeVertical = crsScaleChilds
-        ChildSizing.ShrinkHorizontal = crsScaleChilds
-        ChildSizing.ShrinkVertical = crsScaleChilds
-        ChildSizing.Layout = cclLeftToRightThenTopToBottom
-        ChildSizing.ControlsPerLine = 100
-        ClientHeight = 25
-        ClientWidth = 241
-        DataSource = FClicker.DS
-        Options = []
-        TabOrder = 7
+        TabOrder = 5
       end
       object Button5: TButton
         Left = 544
@@ -191,6 +147,26 @@ object FOptions: TFOptions
         Width = 75
         Caption = 'Usuń'
         OnClick = Button5Click
+        TabOrder = 6
+      end
+      object DBEdit4: TDBEdit
+        Left = 394
+        Height = 23
+        Top = 24
+        Width = 64
+        DataField = 'DATE'
+        DataSource = FClicker.DSDbf
+        CharCase = ecNormal
+        EditMask = '99:99'
+        MaxLength = 5
+        TabOrder = 7
+      end
+      object ToggleBox1: TToggleBox
+        Left = 223
+        Height = 42
+        Top = 62
+        Width = 161
+        Caption = 'ToggleBox1'
         TabOrder = 8
       end
     end
@@ -211,32 +187,7 @@ object FOptions: TFOptions
         Width = 702
         Align = alClient
         Color = clWindow
-        Columns = <        
-          item
-            Title.Caption = 'Id'
-            Width = 50
-            FieldName = 'Column1'
-          end        
-          item
-            Title.Caption = 'Nazwa'
-            Width = 200
-            FieldName = 'Column2'
-          end        
-          item
-            Title.Caption = 'pos X'
-            Width = 50
-            FieldName = 'Column3'
-          end        
-          item
-            Title.Caption = 'pos Y'
-            Width = 50
-            FieldName = 'Column4'
-          end        
-          item
-            Title.Caption = 'godzina'
-            Width = 100
-            FieldName = 'Column5'
-          end>
+        Columns = <>
         DataSource = FClicker.DSDbf
         Flat = True
         Options = [dgTitles, dgIndicator, dgColumnResize, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]

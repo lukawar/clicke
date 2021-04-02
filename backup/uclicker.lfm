@@ -1,6 +1,6 @@
 object FClicker: TFClicker
   Left = 587
-  Height = 117
+  Height = 137
   Top = 313
   Width = 369
   Caption = 'Clicker'
@@ -1119,55 +1119,99 @@ object FClicker: TFClicker
     Left = 200
     Top = 16
   end
-  object DS: TDataSource
-    AutoEdit = False
-    DataSet = Dataset
-    Left = 16
-    Top = 64
-  end
-  object Dataset: TCSVDataset
-    FileName = 'clicker.csv'
-    MaxIndexesCount = 4
-    FieldDefs = <    
-      item
-        Name = 'Column1'
-        DataType = ftString
-        Precision = -1
-        Size = 255
-      end    
-      item
-        Name = 'Column2'
-        DataType = ftString
-        Precision = -1
-        Size = 255
-      end    
-      item
-        Name = 'Column3'
-        DataType = ftString
-        Precision = -1
-        Size = 255
-      end    
-      item
-        Name = 'Column4'
-        DataType = ftString
-        Precision = -1
-        Size = 255
-      end    
-      item
-        Name = 'Column5'
-        DataType = ftString
-        Precision = -1
-        Size = 255
-      end>
+  object Dbf: TDbf
+    FilePath = 'D:\Projects\pascal\clicker\'
+    IndexDefs = <>
+    TableName = 'clicker.dbf'
+    TableLevel = 4
     Active = True
-    CSVOptions.FirstLineAsFieldNames = False
-    CSVOptions.DefaultFieldLength = 255
-    CSVOptions.Delimiter = ','
-    CSVOptions.QuoteChar = '"'
-    CSVOptions.LineEnding = #13#10
-    CSVOptions.IgnoreOuterWhitespace = False
-    CSVOptions.QuoteOuterWhitespace = True
-    Left = 81
-    Top = 64
+    FilterOptions = []
+    Left = 296
+    Top = 72
+    object DbfID: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object DbfNAME: TStringField
+      FieldKind = fkData
+      FieldName = 'NAME'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
+    end
+    object DbfPOSX: TLongintField
+      FieldKind = fkData
+      FieldName = 'POSX'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object DbfPOSY: TLongintField
+      FieldKind = fkData
+      FieldName = 'POSY'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object DbfTYPE: TStringField
+      FieldKind = fkData
+      FieldName = 'TYPE'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 1
+    end
+    object DbfDATE: TStringField
+      FieldKind = fkData
+      FieldName = 'DATE'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 5
+    end
+    object DbfINTERVAL: TLargeintField
+      FieldKind = fkData
+      FieldName = 'INTERVAL'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object DbfACTIVE: TBooleanField
+      FieldKind = fkData
+      FieldName = 'ACTIVE'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      DisplayValues = 'True;False'
+    end
+  end
+  object DSDbf: TDataSource
+    DataSet = Dbf
+    Left = 248
+    Top = 72
+  end
+  object Timer1: TTimer
+    Left = 100
+    Top = 17
   end
 end

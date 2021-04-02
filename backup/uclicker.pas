@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ActnList, Menus,
-  ExtCtrls, uabout, uoptions, DB, csvdataset;
+  ExtCtrls, uabout, uoptions, DB, csvdataset, dbf;
 
 type
 
@@ -14,8 +14,16 @@ type
 
   TFClicker = class(TForm)
     About: TAction;
-    Dataset: TCSVDataset;
-    DS: TDataSource;
+    DbfACTIVE: TBooleanField;
+    DbfDATE: TStringField;
+    DbfID: TLongintField;
+    DbfINTERVAL: TLargeintField;
+    DbfNAME: TStringField;
+    DbfPOSX: TLongintField;
+    DbfPOSY: TLongintField;
+    DbfTYPE: TStringField;
+    DSDbf: TDataSource;
+    Dbf: TDbf;
     MenuItem3: TMenuItem;
     StopApp: TAction;
     DisplayForm: TAction;
@@ -24,6 +32,7 @@ type
     MenuItem2: TMenuItem;
     MenuItem4: TMenuItem;
     PopupMenu1: TPopupMenu;
+    Timer1: TTimer;
     TrayIcon: TTrayIcon;
     procedure AboutExecute(Sender: TObject);
     procedure DisplayFormExecute(Sender: TObject);

@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, dbf, Forms, Controls, Graphics, Dialogs,
-  ExtCtrls, DBGrids, StdCtrls, DBCtrls, DBDateTimePicker;
+  ExtCtrls, DBGrids, StdCtrls, DBCtrls;
 
 type
 
@@ -18,12 +18,11 @@ type
     Button3: TButton;
     Button4: TButton;
     Button5: TButton;
-    DBDateTimePicker1: TDBDateTimePicker;
     DBEdit1: TDBEdit;
     DBEdit2: TDBEdit;
     DBEdit3: TDBEdit;
+    DBEdit4: TDBEdit;
     DBGrid1: TDBGrid;
-    DBNavigator1: TDBNavigator;
     GroupBox1: TGroupBox;
     GroupBox2: TGroupBox;
     Label1: TLabel;
@@ -32,6 +31,7 @@ type
     Label4: TLabel;
     Panel1: TPanel;
     Panel2: TPanel;
+    ToggleBox1: TToggleBox;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);

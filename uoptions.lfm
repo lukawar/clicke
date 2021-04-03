@@ -1,17 +1,17 @@
 object FOptions: TFOptions
   Left = 897
-  Height = 424
+  Height = 587
   Top = 239
   Width = 708
   BorderStyle = bsDialog
   Caption = 'Ustawienia'
-  ClientHeight = 424
+  ClientHeight = 587
   ClientWidth = 708
   LCLVersion = '2.0.12.0'
   object Panel1: TPanel
     Left = 0
     Height = 42
-    Top = 382
+    Top = 545
     Width = 708
     Align = alBottom
     ClientHeight = 42
@@ -29,21 +29,21 @@ object FOptions: TFOptions
   end
   object Panel2: TPanel
     Left = 0
-    Height = 382
+    Height = 545
     Top = 0
     Width = 708
     Align = alClient
-    ClientHeight = 382
+    ClientHeight = 545
     ClientWidth = 708
     TabOrder = 1
     object GroupBox1: TGroupBox
       Left = 1
-      Height = 133
+      Height = 296
       Top = 248
       Width = 706
       Align = alClient
       Caption = 'Dane'
-      ClientHeight = 113
+      ClientHeight = 276
       ClientWidth = 702
       TabOrder = 0
       object DBEdit1: TDBEdit
@@ -157,7 +157,6 @@ object FOptions: TFOptions
         DataField = 'DATE'
         DataSource = FClicker.DSDbf
         CharCase = ecNormal
-        EditMask = '99:99'
         MaxLength = 5
         TabOrder = 7
       end
@@ -170,13 +169,13 @@ object FOptions: TFOptions
         OnChange = ToggleBox1Change
         TabOrder = 8
       end
-      object Label5: TLabel
-        Left = 32
-        Height = 15
-        Top = 66
-        Width = 34
-        Caption = 'Label5'
-        ParentColor = False
+      object GroupBox3: TGroupBox
+        Left = 0
+        Height = 105
+        Top = 171
+        Width = 702
+        Align = alBottom
+        TabOrder = 9
       end
     end
     object GroupBox2: TGroupBox

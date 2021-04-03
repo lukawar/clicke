@@ -32,11 +32,11 @@ type
     DBGrid1: TDBGrid;
     GroupBox1: TGroupBox;
     GroupBox2: TGroupBox;
+    GroupBox3: TGroupBox;
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
-    Label5: TLabel;
     Panel1: TPanel;
     Panel2: TPanel;
     ToggleBox1: TToggleBox;
@@ -46,6 +46,7 @@ type
     procedure Button4Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
     procedure ToggleBox1Change(Sender: TObject);
+    procedure ToggleBox3Change(Sender: TObject);
   private
 
   public
@@ -97,8 +98,13 @@ begin
   if(ToggleBox1.Checked) then begin
     Screen.Cursor := crHandPoint;
     mHook := SetWindowsHookEx(WH_MOUSE_LL, @LowLevelMouseHookProc, hInstance, 0);
-    ToggleBox1.Checked:=false;
+
   end;
+end;
+
+procedure TFOptions.ToggleBox3Change(Sender: TObject);
+begin
+   ToggleBox2.Checked:=false;
 end;
 
 function LowLevelMouseHookProc(nCode: integer; wParam: WPARAM; lParam : LPARAM): LRESULT; stdcall;
@@ -109,10 +115,10 @@ begin
   with info^ do begin
     case wParam of
       wm_lbuttondown : begin
-        FOptions.Label5.Caption := 'X: '+IntToStr(pt.x)+'  Y: '+ IntToStr(pt.y);
         FOptions.DBPosx.Text:=IntToStr(pt.x);
         FOptions.DBPosy.Text:=IntToStr(pt.y);
-
+        UnhookWindowsHookEx(mHook);
+        FOptions.ToggleBox1.Checked:=false;
       end;
     end;
   end;

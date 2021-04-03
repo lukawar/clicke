@@ -37,6 +37,7 @@ type
     procedure AboutExecute(Sender: TObject);
     procedure DisplayFormExecute(Sender: TObject);
     procedure FClickerSizeConstraintsChange(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
     procedure FormResize(Sender: TObject);
     procedure MenuItem1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -49,6 +50,8 @@ type
 
   end;
 
+  function getAllActiveRecords():boolean; stdcall;
+
 var
   FClicker: TFClicker;
 
@@ -58,7 +61,18 @@ implementation
 
 { TFClicker }
 
-
+function getAllActiveRecords():boolean; stdcall;
+begin
+  FAbout.Memo1.Lines.Append('dupa');
+  FClicker.Dbf.First;
+  while not(FClicker.Dbf.EOF) do
+    begin
+  //if(FClicker.Dbf.Locate('ACTIVE', true,[loCaseInsensitive, loPartialKey])) then
+      FAbout.Memo1.Lines.Append(FClicker.Dbf.FieldByName('name').AsString);
+      FClicker.Next;
+    end;
+  result:=true;
+end;
 
 procedure TFClicker.FormShow(Sender: TObject);
 begin
@@ -83,8 +97,7 @@ end;
 
 procedure TFClicker.TrayIconClick(Sender: TObject);
 begin
-  if(FOptions.Showing=false)
-    FOptions.ShowModal;
+  if(FOptions.Showing=false) then FOptions.ShowModal;
 end;
 
 procedure TFClicker.MenuItem1Click(Sender: TObject);
@@ -94,11 +107,15 @@ end;
 
 procedure TFClicker.DisplayFormExecute(Sender: TObject);
 begin
-  if(FOptions.Showing=false)
-     FOptions.ShowModal;
+  if(FOptions.Showing=false) then FOptions.ShowModal;
 end;
 
 procedure TFClicker.FClickerSizeConstraintsChange(Sender: TObject);
+begin
+
+end;
+
+procedure TFClicker.FormCreate(Sender: TObject);
 begin
 
 end;
@@ -110,7 +127,9 @@ end;
 
 procedure TFClicker.AboutExecute(Sender: TObject);
 begin
+
   FAbout.Show;
+    getAllActiveRecords();
 end;
 
 end.

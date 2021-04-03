@@ -547,7 +547,19 @@ object FAbout: TFAbout
     Top = 0
     Width = 495
     Align = alClient
+    ClientHeight = 210
+    ClientWidth = 495
     TabOrder = 0
+    object Memo1: TMemo
+      Left = 123
+      Height = 106
+      Top = 65
+      Width = 342
+      Lines.Strings = (
+        'Memo1'
+      )
+      TabOrder = 0
+    end
   end
   object Panel2: TPanel
     Left = 0

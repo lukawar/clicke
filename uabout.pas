@@ -13,6 +13,7 @@ type
 
   TFAbout = class(TForm)
     Button1: TButton;
+    Memo1: TMemo;
     Panel1: TPanel;
     Panel2: TPanel;
     procedure Button1Click(Sender: TObject);

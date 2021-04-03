@@ -538,6 +538,7 @@ object FClicker: TFClicker
     0000000000000000000000000000000000000000000000000000000000000000
     0000
   }
+  OnCreate = FormCreate
   OnResize = FormResize
   OnShow = FormShow
   OnWindowStateChange = FormWindowStateChange

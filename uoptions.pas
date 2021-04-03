@@ -46,7 +46,6 @@ type
     procedure Button4Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
     procedure ToggleBox1Change(Sender: TObject);
-    procedure ToggleBox3Change(Sender: TObject);
   private
 
   public
@@ -100,11 +99,6 @@ begin
     mHook := SetWindowsHookEx(WH_MOUSE_LL, @LowLevelMouseHookProc, hInstance, 0);
 
   end;
-end;
-
-procedure TFOptions.ToggleBox3Change(Sender: TObject);
-begin
-   ToggleBox2.Checked:=false;
 end;
 
 function LowLevelMouseHookProc(nCode: integer; wParam: WPARAM; lParam : LPARAM): LRESULT; stdcall;

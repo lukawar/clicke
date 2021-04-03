@@ -83,7 +83,8 @@ end;
 
 procedure TFClicker.TrayIconClick(Sender: TObject);
 begin
-  FOptions.ShowModal;
+  if(FOptions.Showing=false)
+    FOptions.ShowModal;
 end;
 
 procedure TFClicker.MenuItem1Click(Sender: TObject);
@@ -93,7 +94,8 @@ end;
 
 procedure TFClicker.DisplayFormExecute(Sender: TObject);
 begin
-   FOptions.ShowModal;
+  if(FOptions.Showing=false)
+     FOptions.ShowModal;
 end;
 
 procedure TFClicker.FClickerSizeConstraintsChange(Sender: TObject);

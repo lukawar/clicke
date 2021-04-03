@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, dbf, Forms, Controls, Graphics, Dialogs,
-  ExtCtrls, DBGrids, StdCtrls, DBCtrls, Windows, Messages, Variants;
+  ExtCtrls, DBGrids, StdCtrls, DBCtrls, Windows, Messages, Variants, LCLType;
 
 type
 
@@ -25,6 +25,7 @@ type
     Button3: TButton;
     Button4: TButton;
     Button5: TButton;
+    Button6: TButton;
     DBEdit1: TDBEdit;
     DBposx: TDBEdit;
     DBPosy: TDBEdit;
@@ -32,19 +33,21 @@ type
     DBGrid1: TDBGrid;
     GroupBox1: TGroupBox;
     GroupBox2: TGroupBox;
-    GroupBox3: TGroupBox;
+    GroupSave: TGroupBox;
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
     Panel1: TPanel;
     Panel2: TPanel;
+    GroupButtons: TPanel;
     ToggleBox1: TToggleBox;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
+    procedure Button6Click(Sender: TObject);
     procedure ToggleBox1Change(Sender: TObject);
   private
 
@@ -72,28 +75,47 @@ end;
 
 procedure TFOptions.Button2Click(Sender: TObject);
 begin
+  GroupSave.Enabled:=true;
+  GroupButtons.Enabled:=false;
   FClicker.Dbf.Insert;
 end;
 
 procedure TFOptions.Button3Click(Sender: TObject);
 begin
+  GroupSave.Enabled:=true;
+  GroupButtons.Enabled:=false;
   FClicker.Dbf.Edit;
 end;
 
 procedure TFOptions.Button4Click(Sender: TObject);
 begin
+  GroupSave.Enabled:=false;
+  GroupButtons.Enabled:=true;
   FClicker.Dbf.Post;
+  GroupSave.Enabled:=false;
 end;
 
 procedure TFOptions.Button5Click(Sender: TObject);
+var
+  Reply: Integer;
 begin
-  FClicker.Dbf.Delete;
+  Reply := Application.MessageBox('Usunąć rekord?', 'Clicker', MB_YESNO);
+  if Reply = IDYES then
+     FClicker.Dbf.Delete;
+end;
+
+procedure TFOptions.Button6Click(Sender: TObject);
+begin
+  GroupSave.Enabled:=false;
+  GroupButtons.Enabled:=true;
+  FClicker.Dbf.Cancel;
 end;
 
 procedure TFOptions.ToggleBox1Change(Sender: TObject);
 const
  WH_MOUSE_LL = 14;
 begin
+  ToggleBox1.Caption:='Kliknij w wybrane miejsce';
   if(ToggleBox1.Checked) then begin
     Screen.Cursor := crHandPoint;
     mHook := SetWindowsHookEx(WH_MOUSE_LL, @LowLevelMouseHookProc, hInstance, 0);
@@ -113,6 +135,7 @@ begin
         FOptions.DBPosy.Text:=IntToStr(pt.y);
         UnhookWindowsHookEx(mHook);
         FOptions.ToggleBox1.Checked:=false;
+        FOptions.ToggleBox1.Caption:='Wybierz miejsce kliknięcia';
       end;
     end;
   end;

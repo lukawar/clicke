@@ -1,29 +1,30 @@
 object FOptions: TFOptions
   Left = 897
-  Height = 587
-  Top = 239
-  Width = 708
-  BorderStyle = bsToolWindow
+  Height = 455
+  Top = 276
+  Width = 720
+  BorderStyle = bsDialog
   Caption = 'Ustawienia'
-  ClientHeight = 587
-  ClientWidth = 708
+  ClientHeight = 455
+  ClientWidth = 720
   FormStyle = fsStayOnTop
   ShowInTaskBar = stNever
   LCLVersion = '2.0.12.0'
   object Panel1: TPanel
     Left = 0
     Height = 42
-    Top = 545
-    Width = 708
+    Top = 413
+    Width = 720
     Align = alBottom
     ClientHeight = 42
-    ClientWidth = 708
+    ClientWidth = 720
     TabOrder = 0
     object Button1: TButton
-      Left = 621
+      Left = 639
       Height = 25
       Top = 8
       Width = 75
+      Anchors = [akRight, akBottom]
       Caption = 'Zamknij'
       OnClick = Button1Click
       TabOrder = 0
@@ -31,22 +32,22 @@ object FOptions: TFOptions
   end
   object Panel2: TPanel
     Left = 0
-    Height = 545
+    Height = 413
     Top = 0
-    Width = 708
+    Width = 720
     Align = alClient
-    ClientHeight = 545
-    ClientWidth = 708
+    ClientHeight = 413
+    ClientWidth = 720
     TabOrder = 1
     object GroupBox1: TGroupBox
       Left = 1
-      Height = 296
+      Height = 164
       Top = 248
-      Width = 706
+      Width = 718
       Align = alClient
       Caption = 'Dane'
-      ClientHeight = 276
-      ClientWidth = 702
+      ClientHeight = 144
+      ClientWidth = 714
       TabOrder = 0
       object DBEdit1: TDBEdit
         Left = 8
@@ -68,6 +69,7 @@ object FOptions: TFOptions
         DataSource = FClicker.DSDbf
         Alignment = taRightJustify
         CharCase = ecNormal
+        Enabled = False
         MaxLength = 0
         TabOrder = 1
       end
@@ -80,6 +82,7 @@ object FOptions: TFOptions
         DataSource = FClicker.DSDbf
         Alignment = taRightJustify
         CharCase = ecNormal
+        Enabled = False
         MaxLength = 0
         TabOrder = 2
       end
@@ -115,42 +118,6 @@ object FOptions: TFOptions
         Caption = 'Godzina'
         ParentColor = False
       end
-      object Button2: TButton
-        Left = 464
-        Height = 25
-        Top = 22
-        Width = 75
-        Caption = 'Dodaj'
-        OnClick = Button2Click
-        TabOrder = 3
-      end
-      object Button3: TButton
-        Left = 544
-        Height = 25
-        Top = 22
-        Width = 75
-        Caption = 'Edytuj'
-        OnClick = Button3Click
-        TabOrder = 4
-      end
-      object Button4: TButton
-        Left = 464
-        Height = 25
-        Top = 56
-        Width = 75
-        Caption = 'Zapisz'
-        OnClick = Button4Click
-        TabOrder = 5
-      end
-      object Button5: TButton
-        Left = 544
-        Height = 25
-        Top = 60
-        Width = 75
-        Caption = 'Usuń'
-        OnClick = Button5Click
-        TabOrder = 6
-      end
       object DBEdit4: TDBEdit
         Left = 394
         Height = 23
@@ -160,41 +127,103 @@ object FOptions: TFOptions
         DataSource = FClicker.DSDbf
         CharCase = ecNormal
         MaxLength = 5
-        TabOrder = 7
+        TabOrder = 3
       end
-      object ToggleBox1: TToggleBox
-        Left = 223
-        Height = 42
-        Top = 62
-        Width = 161
-        Caption = 'Wybierz kliknięcie'
-        OnChange = ToggleBox1Change
-        TabOrder = 8
-      end
-      object GroupBox3: TGroupBox
+      object GroupSave: TGroupBox
         Left = 0
-        Height = 105
-        Top = 171
-        Width = 702
+        Height = 97
+        Top = 47
+        Width = 714
         Align = alBottom
-        TabOrder = 9
+        ClientHeight = 77
+        ClientWidth = 710
+        Enabled = False
+        TabOrder = 4
+        object ToggleBox1: TToggleBox
+          Left = 9
+          Height = 58
+          Top = 8
+          Width = 528
+          AllowGrayed = True
+          Caption = 'Wybierz miejsce kliknięcia'
+          Color = clHotLight
+          OnChange = ToggleBox1Change
+          TabOrder = 0
+        end
+        object Button4: TButton
+          Left = 542
+          Height = 25
+          Top = 8
+          Width = 75
+          Caption = 'Zapisz'
+          Font.Style = [fsBold]
+          OnClick = Button4Click
+          ParentFont = False
+          TabOrder = 1
+        end
+        object Button6: TButton
+          Left = 622
+          Height = 25
+          Top = 8
+          Width = 75
+          Caption = 'Anuluj'
+          OnClick = Button6Click
+          TabOrder = 2
+        end
+      end
+      object GroupButtons: TPanel
+        Left = 458
+        Height = 50
+        Top = 5
+        Width = 248
+        BevelOuter = bvNone
+        ClientHeight = 50
+        ClientWidth = 248
+        TabOrder = 5
+        object Button2: TButton
+          Left = 8
+          Height = 25
+          Top = 16
+          Width = 75
+          Caption = 'Dodaj'
+          OnClick = Button2Click
+          TabOrder = 0
+        end
+        object Button3: TButton
+          Left = 88
+          Height = 25
+          Top = 16
+          Width = 75
+          Caption = 'Edytuj'
+          OnClick = Button3Click
+          TabOrder = 1
+        end
+        object Button5: TButton
+          Left = 168
+          Height = 25
+          Top = 16
+          Width = 75
+          Caption = 'Usuń'
+          OnClick = Button5Click
+          TabOrder = 2
+        end
       end
     end
     object GroupBox2: TGroupBox
       Left = 1
       Height = 247
       Top = 1
-      Width = 706
+      Width = 718
       Align = alTop
       Caption = 'Lista'
       ClientHeight = 227
-      ClientWidth = 702
+      ClientWidth = 714
       TabOrder = 1
       object DBGrid1: TDBGrid
         Left = 0
         Height = 227
         Top = 0
-        Width = 702
+        Width = 714
         Align = alClient
         Color = clWindow
         Columns = <>

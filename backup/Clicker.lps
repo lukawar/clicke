@@ -20,9 +20,8 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UClicker"/>
-        <IsVisibleTab Value="True"/>
         <TopLine Value="110"/>
-        <CursorPos X="11" Y="125"/>
+        <CursorPos X="24" Y="129"/>
         <UsageCount Value="70"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -33,8 +32,10 @@
         <ComponentName Value="FAbout"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="5"/>
-        <CursorPos X="55" Y="27"/>
+        <TopLine Value="15"/>
+        <CursorPos X="3" Y="46"/>
         <UsageCount Value="59"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -47,7 +48,7 @@
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="3"/>
         <TopLine Value="94"/>
-        <CursorPos X="5" Y="100"/>
+        <CursorPos X="3" Y="100"/>
         <UsageCount Value="59"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -105,123 +106,123 @@
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="uclicker.pas"/>
-        <Caret Line="114" Column="51" TopLine="98"/>
+        <Caret Line="56" Column="44" TopLine="34"/>
       </Position1>
       <Position2>
         <Filename Value="uclicker.pas"/>
-        <Caret Line="112" Column="17" TopLine="100"/>
+        <Caret Line="69" Column="40" TopLine="42"/>
       </Position2>
       <Position3>
         <Filename Value="uclicker.pas"/>
-        <Caret Line="117" Column="13" TopLine="104"/>
+        <Caret Line="56" Column="14" TopLine="40"/>
       </Position3>
       <Position4>
         <Filename Value="uclicker.pas"/>
-        <Caret Line="112" Column="23" TopLine="100"/>
+        <Caret Line="69" Column="50" TopLine="48"/>
       </Position4>
       <Position5>
         <Filename Value="uclicker.pas"/>
-        <Caret Line="118" Column="10" TopLine="143"/>
+        <Caret Line="59" Column="52" TopLine="39"/>
       </Position5>
       <Position6>
-        <Filename Value="uoptions.pas"/>
-        <Caret Line="25" Column="37" TopLine="4"/>
+        <Filename Value="uclicker.pas"/>
+        <Caret Line="82" Column="9" TopLine="57"/>
       </Position6>
       <Position7>
-        <Filename Value="uoptions.pas"/>
-        <Caret Line="100" Column="34" TopLine="94"/>
+        <Filename Value="uclicker.pas"/>
+        <Caret Line="158" Column="28" TopLine="141"/>
       </Position7>
       <Position8>
         <Filename Value="uclicker.pas"/>
-        <Caret Line="56" Column="44" TopLine="34"/>
+        <Caret Line="56" Column="36" TopLine="35"/>
       </Position8>
       <Position9>
         <Filename Value="uclicker.pas"/>
-        <Caret Line="69" Column="40" TopLine="42"/>
+        <Caret Line="70" Column="31" TopLine="52"/>
       </Position9>
       <Position10>
         <Filename Value="uclicker.pas"/>
-        <Caret Line="56" Column="14" TopLine="40"/>
+        <Caret Line="158" Column="24" TopLine="141"/>
       </Position10>
       <Position11>
         <Filename Value="uclicker.pas"/>
-        <Caret Line="69" Column="50" TopLine="48"/>
+        <Caret Line="60" Column="37" TopLine="37"/>
       </Position11>
       <Position12>
         <Filename Value="uclicker.pas"/>
-        <Caret Line="59" Column="52" TopLine="39"/>
+        <Caret Line="59" TopLine="44"/>
       </Position12>
       <Position13>
         <Filename Value="uclicker.pas"/>
-        <Caret Line="82" Column="9" TopLine="57"/>
+        <Caret Line="120" Column="9" TopLine="108"/>
       </Position13>
       <Position14>
         <Filename Value="uclicker.pas"/>
-        <Caret Line="158" Column="28" TopLine="141"/>
+        <Caret Line="121" Column="66" TopLine="108"/>
       </Position14>
       <Position15>
         <Filename Value="uclicker.pas"/>
-        <Caret Line="56" Column="36" TopLine="35"/>
+        <Caret Line="119" Column="23" TopLine="105"/>
       </Position15>
       <Position16>
         <Filename Value="uclicker.pas"/>
-        <Caret Line="70" Column="31" TopLine="52"/>
+        <Caret Line="121" Column="66" TopLine="103"/>
       </Position16>
       <Position17>
-        <Filename Value="uclicker.pas"/>
-        <Caret Line="158" Column="24" TopLine="141"/>
+        <Filename Value="uoptions.pas"/>
+        <Caret Line="126" TopLine="110"/>
       </Position17>
       <Position18>
         <Filename Value="uclicker.pas"/>
-        <Caret Line="60" Column="37" TopLine="37"/>
+        <Caret Line="85" TopLine="61"/>
       </Position18>
       <Position19>
         <Filename Value="uclicker.pas"/>
-        <Caret Line="59" TopLine="44"/>
+        <Caret Line="124" Column="48" TopLine="102"/>
       </Position19>
       <Position20>
         <Filename Value="uclicker.pas"/>
-        <Caret Line="120" Column="9" TopLine="108"/>
+        <Caret Line="9" Column="60"/>
       </Position20>
       <Position21>
         <Filename Value="uclicker.pas"/>
-        <Caret Line="121" Column="66" TopLine="108"/>
+        <Caret Line="124" Column="11" TopLine="108"/>
       </Position21>
       <Position22>
         <Filename Value="uclicker.pas"/>
-        <Caret Line="119" Column="23" TopLine="105"/>
+        <Caret Line="79" Column="51" TopLine="63"/>
       </Position22>
       <Position23>
         <Filename Value="uclicker.pas"/>
-        <Caret Line="121" Column="66" TopLine="103"/>
+        <Caret Line="9" Column="69"/>
       </Position23>
       <Position24>
         <Filename Value="uoptions.pas"/>
-        <Caret Line="126" TopLine="110"/>
+        <Caret Line="100" Column="5" TopLine="94"/>
       </Position24>
       <Position25>
-        <Filename Value="uclicker.pas"/>
-        <Caret Line="85" TopLine="61"/>
+        <Filename Value="uabout.pas"/>
+        <Caret Line="27" Column="55"/>
       </Position25>
       <Position26>
-        <Filename Value="uclicker.pas"/>
-        <Caret Line="124" Column="48" TopLine="102"/>
+        <Filename Value="uabout.pas"/>
+        <Caret Line="26" Column="55"/>
       </Position26>
       <Position27>
-        <Filename Value="uclicker.pas"/>
-        <Caret Line="9" Column="60"/>
+        <Filename Value="uabout.pas"/>
+        <Caret Line="28" Column="55"/>
       </Position27>
       <Position28>
-        <Filename Value="uclicker.pas"/>
-        <Caret Line="124" Column="11" TopLine="108"/>
+        <Filename Value="uabout.pas"/>
+        <Caret Line="43" Column="3" TopLine="15"/>
       </Position28>
       <Position29>
-        <Filename Value="uclicker.pas"/>
-        <Caret Line="79" Column="51" TopLine="63"/>
+        <Filename Value="uabout.pas"/>
+        <Caret Line="44" Column="3" TopLine="15"/>
       </Position29>
       <Position30>
-        <Filename Value="uclicker.pas"/>
-        <Caret Line="9" Column="69"/>
+        <Filename Value="uabout.pas"/>
+        <Caret Line="45" Column="3" TopLine="15"/>
       </Position30>
     </JumpHistory>
     <RunParams>

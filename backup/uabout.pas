@@ -13,9 +13,14 @@ type
 
   TFAbout = class(TForm)
     Button1: TButton;
+    Image1: TImage;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
     Panel1: TPanel;
     Panel2: TPanel;
     procedure Button1Click(Sender: TObject);
+    procedure Image1Click(Sender: TObject);
   private
 
   public
@@ -34,6 +39,11 @@ implementation
 procedure TFAbout.Button1Click(Sender: TObject);
 begin
   Close;
+end;
+
+procedure TFAbout.Image1Click(Sender: TObject);
+begin
+
 end;
 
 end.

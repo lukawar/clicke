@@ -143,6 +143,7 @@ object FOptions: TFOptions
         Enabled = False
         TabOrder = 4
         object ToggleBox1: TToggleBox
+          Cursor = crArrow
           Left = 9
           Height = 58
           Top = 8

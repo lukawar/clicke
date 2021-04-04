@@ -153,6 +153,11 @@ begin
         FOptions.DBPosx.Text:=IntToStr(pt.x);
         FOptions.DBPosy.Text:=IntToStr(pt.y);
         UnhookWindowsHookEx(mHook);
+
+        FModalBack.Shape.Left:=pt.x - 10;
+        FModalBack.Shape.Top:=pt.y - 10;
+
+        FOptions.Cursor:=crArrow;
         FOptions.ToggleBox1.Checked:=false;
         FOptions.ToggleBox1.Caption:='Wybierz miejsce kliknięcia';
       end;

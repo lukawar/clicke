@@ -153,6 +153,11 @@ begin
         FOptions.DBPosx.Text:=IntToStr(pt.x);
         FOptions.DBPosy.Text:=IntToStr(pt.y);
         UnhookWindowsHookEx(mHook);
+
+        FModalBack.Shape.Left:=pt.x - 10;
+        FModalBack.Shape.Top:=pt.x - 10;
+
+        FOptions.Cursor:=crArrow;
         FOptions.ToggleBox1.Checked:=false;
         FOptions.ToggleBox1.Caption:='Wybierz miejsce kliknięcia';
       end;
@@ -164,11 +169,9 @@ function drawCircle():boolean;
 begin
   if(FClicker.DSDbf.DataSet.State=dsBrowse) then
      begin
-       FModalBack.Shape.Left:=strToInt(FOptions.DBposx.Caption) - 10;
-       FModalBack.Shape.Top:=strToInt(FOptions.DBposy.Caption) - 10;
+       FModalBack.Shape.Left:=FClicker.DSDbf.DataSet.FieldByName('posx').asInteger - 10;
+       FModalBack.Shape.Top:=FClicker.DSDbf.DataSet.FieldByName('posy').asInteger - 10;
 
-       //FModalBack.Label1.Caption:=FOptions.DBposx.Caption;
-       //FModalBack.Label2.Caption:=FOptions.DBposy.Caption;
        FModalBack.Label1.Caption:=FClicker.DSDbf.DataSet.FieldByName('posx').asString;
        FModalBack.Label2.Caption:=FClicker.DSDbf.DataSet.FieldByName('posy').asString;
        result:=true;

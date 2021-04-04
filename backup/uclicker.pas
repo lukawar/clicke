@@ -6,11 +6,16 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ActnList, Menus,
-  ExtCtrls, uabout, uoptions, umodalback, DB, dbf;
+  ExtCtrls, uabout, uoptions, umodalback, DB, dbf, StdCtrls, Windows;
 
 type
 
   { TFClicker }
+  TClickRecord = record
+    posx : integer;
+    posy : integer;
+    hour : string;
+  end;
 
   TFClicker = class(TForm)
     About: TAction;
@@ -32,7 +37,7 @@ type
     MenuItem2: TMenuItem;
     MenuItem4: TMenuItem;
     PopupMenu1: TPopupMenu;
-    Timer1: TTimer;
+    Timer: TTimer;
     TrayIcon: TTrayIcon;
     procedure AboutExecute(Sender: TObject);
     procedure DisplayFormExecute(Sender: TObject);
@@ -43,6 +48,7 @@ type
     procedure FormShow(Sender: TObject);
     procedure FormWindowStateChange(Sender: TObject);
     procedure StopAppExecute(Sender: TObject);
+    procedure TimerTimer(Sender: TObject);
     procedure TrayIconClick(Sender: TObject);
   private
 
@@ -50,10 +56,12 @@ type
 
   end;
 
-  function getAllActiveRecords():boolean; stdcall;
+
+    procedure getAllActiveRecords();
 
 var
   FClicker: TFClicker;
+  ClickArray: array[1..3] of TClickRecord;
 
 implementation
 
@@ -61,16 +69,21 @@ implementation
 
 { TFClicker }
 
-function getAllActiveRecords():boolean; stdcall;
+procedure getAllActiveRecords();
+var i: integer;
 begin
   FClicker.Dbf.First;
+  i:=1;
   while not(FClicker.Dbf.EOF) do
     begin
-  //if(FClicker.Dbf.Locate('ACTIVE', true,[loCaseInsensitive, loPartialKey])) then
-      FAbout.Memo1.Lines.Append(FClicker.Dbf.FieldByName('name').AsString);
-      FClicker.Next;
+      if(FClicker.Dbf.FieldByName('date').AsString<>null) then begin
+        ClickArray[i].hour:=FClicker.Dbf.FieldByName('date').AsString;
+        ClickArray[i].posx:=FClicker.Dbf.FieldByName('posx').AsInteger;
+        ClickArray[i].posy:=FClicker.Dbf.FieldByName('posy').AsInteger;
+        FClicker.Dbf.Next;
+        i:=i+1; //wtf, no i++?
+      end;
     end;
-  result:=true;
 end;
 
 procedure TFClicker.FormShow(Sender: TObject);
@@ -92,6 +105,29 @@ end;
 procedure TFClicker.StopAppExecute(Sender: TObject);
 begin
   Application.Terminate;
+end;
+
+procedure TFClicker.TimerTimer(Sender: TObject);
+var
+  actualTime: TDateTime;
+  formatedTime: string;
+  clickr: TClickRecord;
+begin
+  actualTime:= Now;
+  formatedTime:=FormatDateTime('hh:nn', actualTime);
+
+  for clickr in ClickArray do
+    begin
+      if(clickr.hour=formatedTime) then
+        begin
+          //showmessage(clickr.hour + ' - ' + formatedTime + ' tak')
+          SetCursorPos(clickr.posx, clickr.posy);
+          Mouse_Event(MOUSEEVENTF_ABSOLUTE or MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0);
+          Mouse_Event(MOUSEEVENTF_ABSOLUTE or MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
+        end
+
+    end;
+
 end;
 
 procedure TFClicker.TrayIconClick(Sender: TObject);
@@ -124,7 +160,7 @@ end;
 
 procedure TFClicker.FormCreate(Sender: TObject);
 begin
-
+   getAllActiveRecords();
 end;
 
 procedure TFClicker.FormResize(Sender: TObject);
@@ -134,9 +170,8 @@ end;
 
 procedure TFClicker.AboutExecute(Sender: TObject);
 begin
-
   FAbout.Show;
-    getAllActiveRecords();
+
 end;
 
 end.

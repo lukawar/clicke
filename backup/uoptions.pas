@@ -97,6 +97,7 @@ begin
   GroupButtons.Enabled:=true;
   FClicker.Dbf.Post;
   GroupSave.Enabled:=false;
+  getAllActiveRecords();
 end;
 
 procedure TFOptions.Button5Click(Sender: TObject);
@@ -155,7 +156,7 @@ begin
         UnhookWindowsHookEx(mHook);
 
         FModalBack.Shape.Left:=pt.x - 10;
-        FModalBack.Shape.Top:=pt.x - 10;
+        FModalBack.Shape.Top:=pt.y - 10;
 
         FOptions.Cursor:=crArrow;
         FOptions.ToggleBox1.Checked:=false;

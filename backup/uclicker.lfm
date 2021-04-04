@@ -1208,11 +1208,12 @@ object FClicker: TFClicker
   end
   object DSDbf: TDataSource
     DataSet = Dbf
-    OnDataChange = DSDbfDataChange
     Left = 248
     Top = 72
   end
-  object Timer1: TTimer
+  object Timer: TTimer
+    Interval = 6000
+    OnTimer = TimerTimer
     Left = 100
     Top = 17
   end

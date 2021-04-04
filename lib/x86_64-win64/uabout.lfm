@@ -550,15 +550,13 @@ object FAbout: TFAbout
     ClientHeight = 210
     ClientWidth = 495
     TabOrder = 0
-    object Memo1: TMemo
-      Left = 123
-      Height = 106
-      Top = 65
-      Width = 342
-      Lines.Strings = (
-        'Memo1'
-      )
-      TabOrder = 0
+    object Label1: TLabel
+      Left = 154
+      Height = 15
+      Top = 109
+      Width = 34
+      Caption = 'Label1'
+      ParentColor = False
     end
   end
   object Panel2: TPanel

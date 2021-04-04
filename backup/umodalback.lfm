@@ -1,0 +1,27 @@
+object FModalBack: TFModalBack
+  Left = 399
+  Height = 563
+  Top = 145
+  Width = 822
+  HorzScrollBar.Visible = False
+  Align = alClient
+  AlphaBlend = True
+  AlphaBlendValue = 100
+  BorderIcons = []
+  BorderStyle = bsNone
+  Caption = 'FModalBack'
+  ClientHeight = 563
+  ClientWidth = 822
+  LCLVersion = '2.0.12.0'
+  WindowState = wsMaximized
+  object Shape: TShape
+    Left = 158
+    Height = 21
+    Top = 104
+    Width = 21
+    BorderSpacing.InnerBorder = 5
+    Brush.Color = clBtnHighlight
+    Pen.Color = clRed
+    Shape = stCircle
+  end
+end

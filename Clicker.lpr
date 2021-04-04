@@ -7,7 +7,7 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, dbflaz, datetimectrls, UClicker, uabout, uoptions
+  Forms, dbflaz, datetimectrls, UClicker, uabout, uoptions, umodalback
   { you can add units after this };
 
 {$R *.res}
@@ -19,6 +19,7 @@ begin
   Application.CreateForm(TFClicker, FClicker);
   Application.CreateForm(TFAbout, FAbout);
   Application.CreateForm(TFOptions, FOptions);
+  Application.CreateForm(TFModalBack, FModalBack);
   Application.Run;
 end.
 

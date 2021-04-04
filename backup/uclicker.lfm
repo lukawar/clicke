@@ -1208,6 +1208,7 @@ object FClicker: TFClicker
   end
   object DSDbf: TDataSource
     DataSet = Dbf
+    OnDataChange = DSDbfDataChange
     Left = 248
     Top = 72
   end

@@ -5,8 +5,8 @@ unit uoptions;
 interface
 
 uses
-  Classes, SysUtils, dbf, Forms, Controls, Graphics, Dialogs,
-  ExtCtrls, DBGrids, StdCtrls, DBCtrls, Windows, Messages, Variants, LCLType;
+  Classes, SysUtils, dbf, Forms, Controls, Graphics, Dialogs, umodalback,
+  ExtCtrls, DBGrids, StdCtrls, DBCtrls, Windows, Messages, Variants, LCLType, DB;
 
 type
 
@@ -48,6 +48,9 @@ type
     procedure Button4Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
     procedure Button6Click(Sender: TObject);
+    procedure DBposxChange(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+    procedure FormShow(Sender: TObject);
     procedure ToggleBox1Change(Sender: TObject);
   private
 
@@ -56,6 +59,7 @@ type
   end;
 
   function LowLevelMouseHookProc(nCode: integer; wParam: WPARAM; lParam : LPARAM): LRESULT; stdcall;
+  function drawCircle():boolean;
 
 var
   FOptions: TFOptions;
@@ -111,6 +115,21 @@ begin
   FClicker.Dbf.Cancel;
 end;
 
+procedure TFOptions.DBposxChange(Sender: TObject);
+begin
+  drawCircle();
+end;
+
+procedure TFOptions.FormClose(Sender: TObject; var CloseAction: TCloseAction);
+begin
+  if(FModalBack.Showing=true) then FModalBack.Close;
+end;
+
+procedure TFOptions.FormShow(Sender: TObject);
+begin
+  drawCircle();
+end;
+
 procedure TFOptions.ToggleBox1Change(Sender: TObject);
 const
  WH_MOUSE_LL = 14;
@@ -139,6 +158,20 @@ begin
       end;
     end;
   end;
+end;
+
+function drawCircle():boolean;
+begin
+  if(FClicker.DSDbf.DataSet.State=dsBrowse) then
+     begin
+       FModalBack.Shape.Left:=FClicker.DSDbf.DataSet.FieldByName('posx').asInteger - 10;
+       FModalBack.Shape.Top:=FClicker.DSDbf.DataSet.FieldByName('posy').asInteger - 10;
+
+       FModalBack.Label1.Caption:=FClicker.DSDbf.DataSet.FieldByName('posx').asString;
+       FModalBack.Label2.Caption:=FClicker.DSDbf.DataSet.FieldByName('posy').asString;
+       result:=true;
+     end
+  else result:=false;
 end;
 
 end.

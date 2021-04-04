@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ActnList, Menus,
-  ExtCtrls, uabout, uoptions, DB, dbf;
+  ExtCtrls, uabout, uoptions, umodalback, DB, dbf;
 
 type
 
@@ -63,7 +63,6 @@ implementation
 
 function getAllActiveRecords():boolean; stdcall;
 begin
-  FAbout.Memo1.Lines.Append('dupa');
   FClicker.Dbf.First;
   while not(FClicker.Dbf.EOF) do
     begin
@@ -97,7 +96,11 @@ end;
 
 procedure TFClicker.TrayIconClick(Sender: TObject);
 begin
-  if(FOptions.Showing=false) then FOptions.ShowModal;
+  if(FOptions.Showing=false) then
+  begin
+    FModalBack.Show;
+    FOptions.ShowModal;
+  end;
 end;
 
 procedure TFClicker.MenuItem1Click(Sender: TObject);
@@ -107,7 +110,11 @@ end;
 
 procedure TFClicker.DisplayFormExecute(Sender: TObject);
 begin
-  if(FOptions.Showing=false) then FOptions.ShowModal;
+  if(FOptions.Showing=false) then
+  begin
+    FModalBack.Show;
+    FOptions.ShowModal;
+  end;
 end;
 
 procedure TFClicker.FClickerSizeConstraintsChange(Sender: TObject);

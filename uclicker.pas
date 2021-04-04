@@ -160,7 +160,11 @@ end;
 
 procedure TFClicker.FormCreate(Sender: TObject);
 begin
-   getAllActiveRecords();
+  Dbf.FilePathFull:='';
+  Dbf.FilePath:='';
+  Dbf.TableName:='clicker.dbf';
+  Dbf.Active:=true;
+  getAllActiveRecords();
 end;
 
 procedure TFClicker.FormResize(Sender: TObject);

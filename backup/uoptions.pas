@@ -97,7 +97,7 @@ begin
   GroupButtons.Enabled:=true;
   FClicker.Dbf.Post;
   GroupSave.Enabled:=false;
-  //getAllActiveRecords();
+  getAllActiveRecords();
 end;
 
 procedure TFOptions.Button5Click(Sender: TObject);

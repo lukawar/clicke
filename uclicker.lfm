@@ -1121,11 +1121,10 @@ object FClicker: TFClicker
     Top = 16
   end
   object Dbf: TDbf
-    FilePath = 'D:\Projects\pascal\clicker\'
+    FilePath = '\'
     IndexDefs = <>
     TableName = 'clicker.dbf'
     TableLevel = 4
-    Active = True
     FilterOptions = []
     Left = 296
     Top = 72

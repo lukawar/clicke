@@ -10,6 +10,7 @@ object FOptions: TFOptions
   FormStyle = fsStayOnTop
   OnClose = FormClose
   OnShow = FormShow
+  Position = poDesktopCenter
   ShowInTaskBar = stNever
   LCLVersion = '2.0.12.0'
   object Panel1: TPanel
@@ -59,7 +60,7 @@ object FOptions: TFOptions
         DataField = 'NAME'
         DataSource = FClicker.DSDbf
         CharCase = ecNormal
-        MaxLength = 50
+        MaxLength = 0
         TabOrder = 0
       end
       object DBposx: TDBEdit
@@ -129,7 +130,7 @@ object FOptions: TFOptions
         DataField = 'DATE'
         DataSource = FClicker.DSDbf
         CharCase = ecNormal
-        MaxLength = 5
+        MaxLength = 0
         TabOrder = 3
       end
       object GroupSave: TGroupBox

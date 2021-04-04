@@ -20,7 +20,6 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="UClicker"/>
-        <IsVisibleTab Value="True"/>
         <TopLine Value="140"/>
         <CursorPos X="19" Y="166"/>
         <UsageCount Value="71"/>
@@ -46,6 +45,7 @@
         <ComponentName Value="FOptions"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
         <TopLine Value="94"/>
         <CursorPos X="3" Y="100"/>
